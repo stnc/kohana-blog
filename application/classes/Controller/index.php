@@ -5,6 +5,7 @@ class Controller_Index extends Controller {
 	public function action_index()
 	{
 
+       
         $count = DB::select(DB::expr('COUNT(*) AS mycount'))->from('articles')->execute()->get('mycount');
 
         $perpage = 2;
@@ -32,14 +33,24 @@ class Controller_Index extends Controller {
             ->group_by("articles.id")
             ->execute()->as_array();
 
-        $title = 'Hello world!!!';
-        Template::factory('Index/index', array(
-                'title' => $title,
-                'data' =>$data,
-                'pagination'=>$pagination,
-            )
-        )->response();
+        $title = 'Hello world!!! -----selman';
+        // Template::factory('Index/index', array(
+        //         'title' => $title,
+        //         'data' =>$data,
+        //         'pagination'=>$pagination,
+        //     )
 
+        
+
+
+        // )->response();
+
+        $view = new View_Download_Index;
+        $view->set('title',  $title)
+             ->set('pagination',$pagination)
+            ->set(  'data' ,$data);
+
+   $this->response->body($view);
 	}
 	public function action_total()
     {

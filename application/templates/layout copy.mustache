@@ -1,0 +1,59 @@
+<!doctype html>
+<head>
+<meta charset="{{charset}}">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="author" content="Kohana Framework">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{{base_url}}favicon.ico">
+<link rel="apple-touch-icon" href="{{base_url}}apple-touch-icon.png">
+<link rel="stylesheet" href="{{base_url}}assets/css/style.css?v=1.1">
+<link rel="stylesheet" href="{{base_url}}assets/css/responsive.css?v=1.0">
+<script src="{{base_url}}assets/js/lib/jquery-3.3.1.min.js"></script>
+<script async src="{{base_url}}assets/js/lib/slides.js"></script>
+<script async src="{{base_url}}assets/js/global.js"></script>
+<script async src="{{base_url}}assets/js/gallery.js"></script>
+{{#stats}}
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120526781-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-120526781-1');
+</script>
+{{/stats}}
+</head>
+
+<body>
+
+<div class="wrapper">
+
+	<header>
+		{{>header}}
+		{{>header1}}
+	</header>
+
+	{{#banner_exists}}
+	<section id="banner">
+		{{>banner}}
+	</section> <!-- END section#banner -->
+	{{/banner_exists}}
+
+	<div class="notices">
+		{{>notices}}
+	</div>
+
+	<div class="container">
+
+		{{>content}}
+
+		<footer class="inset">
+			{{>footer}}
+		</footer>
+
+	</div>
+</div>
+</body>
+</html>
