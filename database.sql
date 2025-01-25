@@ -11,48 +11,7 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
--- Dumping structure for table master.articles
-DROP TABLE IF EXISTS `articles`;
-CREATE TABLE IF NOT EXISTS `articles` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `content` varchar(255) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `user_id` int(11) NOT NULL,
-  `small_title` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
-
--- Dumping data for table master.articles: ~21 rows (approximately)
-/*!40000 ALTER TABLE `articles` DISABLE KEYS */;
-INSERT INTO `articles` (`id`, `content`, `title`, `name`, `updated_at`, `created_at`, `user_id`, `small_title`) VALUES
-	(1, 'dfdsfs', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', '2025-01-24 04:38:16', 1, '1'),
-	(2, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', '2025-01-24 04:38:17', 1, 'dsfdsfs'),
-	(3, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(4, 'eee', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', '2025-01-24 04:38:18', 1, 'dsfdsfs'),
-	(5, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(6, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(7, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(8, 'ertre', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(9, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(10, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(11, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(12, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(13, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(14, 'rtret', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(15, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(16, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(17, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(18, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(19, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(20, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs'),
-	(21, 'deneme', 'sdfdsf', 'dsfdsf', '2025-01-24 04:36:12', NULL, 1, 'dsfdsfs');
-/*!40000 ALTER TABLE `articles` ENABLE KEYS */;
-
 -- Dumping structure for table master.images
-DROP TABLE IF EXISTS `images`;
 CREATE TABLE IF NOT EXISTS `images` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -69,7 +28,6 @@ CREATE TABLE IF NOT EXISTS `images` (
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 
 -- Dumping structure for table master.log_controllers
-DROP TABLE IF EXISTS `log_controllers`;
 CREATE TABLE IF NOT EXISTS `log_controllers` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `controller` varchar(255) NOT NULL,
@@ -86,7 +44,6 @@ CREATE TABLE IF NOT EXISTS `log_controllers` (
 /*!40000 ALTER TABLE `log_controllers` ENABLE KEYS */;
 
 -- Dumping structure for table master.log_models
-DROP TABLE IF EXISTS `log_models`;
 CREATE TABLE IF NOT EXISTS `log_models` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `model` varchar(255) NOT NULL,
@@ -105,7 +62,6 @@ CREATE TABLE IF NOT EXISTS `log_models` (
 /*!40000 ALTER TABLE `log_models` ENABLE KEYS */;
 
 -- Dumping structure for table master.payments
-DROP TABLE IF EXISTS `payments`;
 CREATE TABLE IF NOT EXISTS `payments` (
   `id` bigint(20) unsigned NOT NULL,
   `user_id` int(11) DEFAULT NULL,
@@ -122,7 +78,6 @@ CREATE TABLE IF NOT EXISTS `payments` (
 /*!40000 ALTER TABLE `payments` ENABLE KEYS */;
 
 -- Dumping structure for table master.payment_systems
-DROP TABLE IF EXISTS `payment_systems`;
 CREATE TABLE IF NOT EXISTS `payment_systems` (
   `id` bigint(20) unsigned NOT NULL,
   `title` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
@@ -140,8 +95,38 @@ INSERT INTO `payment_systems` (`id`, `title`) VALUES
 	(7, 'test');
 /*!40000 ALTER TABLE `payment_systems` ENABLE KEYS */;
 
+-- Dumping structure for table master.races
+CREATE TABLE IF NOT EXISTS `races` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `distances` varchar(255) NOT NULL,
+  `logo` varchar(255) NOT NULL,
+  `date` date DEFAULT NULL,
+  `updated_at` datetime NOT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+
+-- Dumping data for table master.races: ~4 rows (approximately)
+/*!40000 ALTER TABLE `races` DISABLE KEYS */;
+INSERT INTO `races` (`id`, `title`, `name`, `content`, `location`, `distances`, `logo`, `date`, `updated_at`, `created_at`, `user_id`) VALUES
+	(1, 'Hincestienduro 2', 'Hincestienduro', '<ul class="center-list position-relative">\n			\n							<h4>Hincestienduro Where &amp; When</h4>\n							<li>\n								<strong>Location:</strong>\n								<small>\n										<span>chisinau</span>,\n										<span>  2024</span>\n								</small>\n							</li>\n								<li><strong>Race Date:</strong> <small><span>2025/01/24 07:00:00 PM (Friday)</span></small></li>\n								<li>\n									<strong>Categories:</strong> <small><ul>\n				<li>Hobby</li>\n				<li>Newby</li>\n				<li>Expert</li>\n			</ul>\n			</small>\n								</li>\n						</ul>', 'chisinau, 2024, MDA	', '10 Km, 20 Km', 'https://s3-us-west-2.amazonaws.com/images.raceentry.com/logo/sd-trail-championships-registration-logo-53188.jpg?v=1737772095', '2025-01-24', '2025-01-24 04:36:12', '2025-01-24 04:38:16', 1),
+	(2, 'MT TOP SUMMER MARATHON example ', 'MT TOP SUMMER MARATHON', 'THIS IS THE FIRST MARATHON OF ITS KIND IN QUTHING DISTRICT, WE NOT ONLY RACE BUT WE CELEBRATE 200 YEARS OF BASOTHO NATION', 'MOUNT MOOROSI, QUTHING, LSO', '5 Km	', 'https://s3-us-west-2.amazonaws.com/images.raceentry.com/top-banner/mt-top-summer-marathon-top-banner-82196.jpg?v=1737772926', '2025-01-24', '2025-01-24 04:36:12', '2025-01-24 04:38:17', 1),
+	(3, 'MOUNT MOOROSI RACE lorem 4', 'MOUNT MOOROSI RACE', 'THIS IS THE FIRST MARATHON OF ITS KIND IN QUTHING DISTRICT, WE NOT ONLY RACE BUT WE CELEBRATE 200 YEARS OF BASOTHO NATION', 'MOUNT MOOROSI, QUTHING, LSO', '10 Km	', 'https://s3-us-west-2.amazonaws.com/images.raceentry.com/top_banner/mount-moorosi-race-top_banner-82197.jpg?v=1737773046', '2025-03-24', '2025-01-24 04:36:12', NULL, 1),
+	(4, '2025 The Cookie Dash Hybrid Race LOS ANGELES', '2025 The Cookie Dash Hybrid Race LOS ANGELES', '<div id="raceFullDesc">\n			<h5><strong>Get Ready for the Cookie Dash! ðŸÂªâœ¨The race is on—join us for the Cookie Dash! It\'s not just a race, it\'s an adventure filled with delicious cookies for those who run with a sweet reward in mind!</strong></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Overview:</strong></u></span><br><span style="color: #34495e;">Run will sell-out QUICK! We will close off waves the moment they fill up. If waves are sold out, you can sign-up for the virtual run option or wait list.</span></h5>\n			<h5><span style="color: #34495e;">This is a smaller, private group run with a cap per wave.</span></h5>\n			<h5><span style="color: #34495e;">All paces and ages (under 18 with guardian) are welcome - Run or Walk! </span><span style="color: #34495e;">&nbsp;</span></h5>\n			<h5><span style="color: #000000;"><u>There\'s no equipment or setup, this is a pure run with our coordinators to support you in a warm, stress-free setting!</u></span></h5>\n			<h5><span style="color: #000000;">When you sign-up, we give you the support you need to help you achieve your goals and fitness. We also invite you to be part of our local run clubs that supports your fitness journey.&nbsp;<br></span></h5>\n			<h5><span style="color: #843fa1;"><strong><u>Timing:</u></strong></span></h5>\n			<h5><span style="color: #000000;">- Timing is Optional: You may track your time on an app (Strava, RunKeeper, Nike Run, etc) and submit your times with our easy form to be posted online. Or you can ask our coordinators to help keep track of your time.&nbsp;</span></h5>\n			<h5><span style="color: #000000;">- No timing chips (</span><span style="color: #000000;">This is a stress free run to support you in achieving your goals)!</span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>What You Get (Swag Bag)</strong></u></span><span style="color: #843fa1;"><u><strong>:</strong></u></span></h5>\n			<h5><span style="color: #000000;">-<strong> Running T-Shirt</strong> (Shipped to the address you register with - US only)</span></h5>\n			<h5><strong><span style="color: #000000;">- Finisher\'s Towel or Giveaway</span></strong></h5>\n			<h5><span style="color: #000000;"><strong>- Finisher\'s Medal!&nbsp;</strong></span></h5>\n			<h5><strong><span style="color: #000000;">- Digital Training Pack&nbsp;</span></strong></h5>\n			<h5><span style="color: #000000;">-&nbsp;<span style="color: rgb( 86 , 66 , 219 );"><a style="color: rgb( 86 , 66 , 219 );" href="https://www.thebestraces.com/results/" target="_blank" rel="nofollow noopener noreferrer"><strong>Online Results &amp; Certificate of Completion</strong></a></span></span></h5>\n			<h5><span style="color: #000000;"><span style="color: rgb( 86 , 66 , 219 );"><strong>- <span style="color: rgb( 132 , 63 , 161 );"><a style="color: rgb( 132 , 63 , 161 );" href="https://www.thebestraces.com/run-or-walk-club/" target="_blank" rel="nofollow noopener noreferrer"><span style="text-decoration: underline;">Invitation to Join one of our Local Running Clubs</span></a></span></strong></span></span></h5>\n			<h5><span style="color: #000000;">-&nbsp;<strong>We now have Technical Running Shirts (Optional).</strong> These lightweight, moisture wicking shirts can be <u>upgraded for just $5 more</u>.&nbsp;</span></h5>\n			<h5><span style="color: #843fa1;"><strong><u>Packet Pickup:</u></strong></span></h5>\n			<h5><span style="color: #000000;">No hassle of picking up packets required!</span></h5>\n			<h5><span style="color: #000000;">-Swag shipped direct to your address (Please make sure you provide your full, correct US mailing address including apartment number and check spelling)</span></h5>\n			<h5><span style="color: #000000;">- Race bibs are provided on race day</span></h5>\n			<h5><span style="color: #843fa1;"><strong><u>When will I get my Swag?</u></strong></span></h5>\n			<h5><span style="color: #000000;">You will get your shirt at your mailing address the week of your race.</span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Race Updates: </strong></u></span></h5>\n			<h5><span style="color: #000000;">We will email you a final update the Wednesday before the race with final details and course maps.</span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Do you accept last minute registrations?</strong> (For those signing up 2 weeks before the race)</u></span></h5>\n			<h5><span style="color: #000000;">Yes, but please note that it takes time for us to ship your shirt. Your shirt will likely arrive after the run. You can wear any shirt you find appropriate to run the race!&nbsp;</span></h5>\n			<h5>&nbsp;<br><span style="color: #843fa1;"><u><strong>Wave Times: (Email Us Your Desired Wave Time: <a style="color: #843fa1;" href="mailto:info@thebestraces.com" target="_blank" rel="nofollow noopener noreferrer">info@thebestraces.com</a>)</strong></u></span><br><span style="color: #000000;">(Waves filled on a First Come, First Serve Basis)</span><br><span style="color: #000000;">Wave A: 7:30AM</span><br><span style="color: #000000;">Wave B: 8:00AM</span><br><span style="color: #000000;">Wave C: 8:30AM</span></h5>\n			<h5><span style="color: #000000;">Late runners can run upon arrival (Please note our coordinators stay 3 hours after the first wave)</span></h5>\n			<h5><span style="color: #000000;"><span style="text-decoration: underline;"><span style="color: rgb( 132 , 63 , 161 ); text-decoration: underline;"><strong>Are there any other Questions we missed?</strong></span></span><br><span style="text-decoration: underline;"><a href="https://www.thebestraces.com/faq/" target="_blank" rel="nofollow noopener noreferrer"><span style="color: rgb(132, 63, 161); text-decoration: underline;">https://www.thebestraces.com/faq/</span></a></span></span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Virtual Run Option:</strong></u></span><br><span style="color: #000000;">- Our Virtual Run uniquely offers a Training Pack with Digital Tools to support your run.&nbsp;</span></h5>\n			<h5><span style="color: #000000;">Virtual runs can be done any time and place of your choosing using any tracking device (optional). After you finish, you can submit your results to info@thebestraces.com to receive your medal!&nbsp;</span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Race Bundle:</strong></u></span></h5>\n			<h5><span style="color: #000000;">Sign-up for more races and get a discount!&nbsp;</span></h5>\n			<h4><span style="color: #843fa1;"><u><strong>Sponsorships &amp; Promoting your Business:</strong></u></span></h4>\n			<h5><strong>If you\'re looking to become a sponsor, we\'d love showcase your business!</strong><br><span style="color: #3598db;"><strong><u><a style="color: #3598db;" href="https://www.thebestraces.com/events" target="_blank" rel="nofollow noopener noreferrer">https://www.thebestraces.com/events</a></u></strong></span></h5>\n			<h5>&nbsp;</h5>\n			<h4><span style="color: #843fa1;"><strong><u>Team Glo Volunteers:</u></strong></span></h4>\n			<h5><span style="color: #843fa1;">If you\'re interested in helping put on runs for the Community and helping people achieve their goals, we invite you to join our team of volunteers, fill out the form here: </span><strong><span style="color: #3598db;"><a style="color: #3598db;" href="https://www.thebestraces.com/volunteer-form/" target="_blank" rel="nofollow noopener noreferrer"><u>https://www.thebestraces.com/volunteer-form/</u></a> </span></strong></h5>\n			<h5>&nbsp;</h5>\n			<h4><span style="text-decoration: underline;"><span style="color: rgb( 132 , 63 , 161 ); text-decoration: underline;"><strong>Be part of the Journey!</strong></span></span></h4>\n			<h5>Our Charity Initiatives. Find out more @ <a href="https://www.thebestracesjourney.com" target="_blank" rel="nofollow noopener noreferrer"><span style="color: rgb( 132 , 63 , 161 );">www.thebestracesjourney.com</span></a><br>Keep running. Every mile you log after the race, we\'ll donate $1 to one of the charities we work with! (Note that Fundraising is Optional)</h5>\n			</div>', 'Newport Beach, California', '1 Mi, 10 Km, 13.1 Km, 5 Km', 'https://s3-us-west-2.amazonaws.com/images.raceentry.com/logo/washington-city-half-marathon-registration-logo-2182.png?v=1737772095', NULL, '2025-01-24 04:36:12', '2025-01-24 04:38:18', 1),
+	(22, 'Hincestienduro lorem', 'Hincestienduro', '<ul class="center-list position-relative">\n			\n							<h4>Hincestienduro Where &amp; When</h4>\n							<li>\n								<strong>Location:</strong>\n								<small>\n										<span>chisinau</span>,\n										<span>  2024</span>\n								</small>\n							</li>\n								<li><strong>Race Date:</strong> <small><span>2025/01/24 07:00:00 PM (Friday)</span></small></li>\n								<li>\n									<strong>Categories:</strong> <small><ul>\n				<li>Hobby</li>\n				<li>Newby</li>\n				<li>Expert</li>\n			</ul>\n			</small>\n								</li>\n						</ul>', 'chisinau, 2024, MDA	', '10 Km, 20 Km', 'https://s3-us-west-2.amazonaws.com/images.raceentry.com/logo/sd-trail-championships-registration-logo-53188.jpg?v=1737772095', '2025-01-24', '2025-01-24 04:36:12', '2025-01-24 04:38:16', 1),
+	(23, '2025 The Cookie Dash Hybrid Race LOS ANGELES 1', '2025 The Cookie Dash Hybrid Race LOS ANGELES', '<div id="raceFullDesc">\n			<h5><strong>Get Ready for the Cookie Dash! ðŸÂªâœ¨The race is on—join us for the Cookie Dash! It\'s not just a race, it\'s an adventure filled with delicious cookies for those who run with a sweet reward in mind!</strong></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Overview:</strong></u></span><br><span style="color: #34495e;">Run will sell-out QUICK! We will close off waves the moment they fill up. If waves are sold out, you can sign-up for the virtual run option or wait list.</span></h5>\n			<h5><span style="color: #34495e;">This is a smaller, private group run with a cap per wave.</span></h5>\n			<h5><span style="color: #34495e;">All paces and ages (under 18 with guardian) are welcome - Run or Walk! </span><span style="color: #34495e;">&nbsp;</span></h5>\n			<h5><span style="color: #000000;"><u>There\'s no equipment or setup, this is a pure run with our coordinators to support you in a warm, stress-free setting!</u></span></h5>\n			<h5><span style="color: #000000;">When you sign-up, we give you the support you need to help you achieve your goals and fitness. We also invite you to be part of our local run clubs that supports your fitness journey.&nbsp;<br></span></h5>\n			<h5><span style="color: #843fa1;"><strong><u>Timing:</u></strong></span></h5>\n			<h5><span style="color: #000000;">- Timing is Optional: You may track your time on an app (Strava, RunKeeper, Nike Run, etc) and submit your times with our easy form to be posted online. Or you can ask our coordinators to help keep track of your time.&nbsp;</span></h5>\n			<h5><span style="color: #000000;">- No timing chips (</span><span style="color: #000000;">This is a stress free run to support you in achieving your goals)!</span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>What You Get (Swag Bag)</strong></u></span><span style="color: #843fa1;"><u><strong>:</strong></u></span></h5>\n			<h5><span style="color: #000000;">-<strong> Running T-Shirt</strong> (Shipped to the address you register with - US only)</span></h5>\n			<h5><strong><span style="color: #000000;">- Finisher\'s Towel or Giveaway</span></strong></h5>\n			<h5><span style="color: #000000;"><strong>- Finisher\'s Medal!&nbsp;</strong></span></h5>\n			<h5><strong><span style="color: #000000;">- Digital Training Pack&nbsp;</span></strong></h5>\n			<h5><span style="color: #000000;">-&nbsp;<span style="color: rgb( 86 , 66 , 219 );"><a style="color: rgb( 86 , 66 , 219 );" href="https://www.thebestraces.com/results/" target="_blank" rel="nofollow noopener noreferrer"><strong>Online Results &amp; Certificate of Completion</strong></a></span></span></h5>\n			<h5><span style="color: #000000;"><span style="color: rgb( 86 , 66 , 219 );"><strong>- <span style="color: rgb( 132 , 63 , 161 );"><a style="color: rgb( 132 , 63 , 161 );" href="https://www.thebestraces.com/run-or-walk-club/" target="_blank" rel="nofollow noopener noreferrer"><span style="text-decoration: underline;">Invitation to Join one of our Local Running Clubs</span></a></span></strong></span></span></h5>\n			<h5><span style="color: #000000;">-&nbsp;<strong>We now have Technical Running Shirts (Optional).</strong> These lightweight, moisture wicking shirts can be <u>upgraded for just $5 more</u>.&nbsp;</span></h5>\n			<h5><span style="color: #843fa1;"><strong><u>Packet Pickup:</u></strong></span></h5>\n			<h5><span style="color: #000000;">No hassle of picking up packets required!</span></h5>\n			<h5><span style="color: #000000;">-Swag shipped direct to your address (Please make sure you provide your full, correct US mailing address including apartment number and check spelling)</span></h5>\n			<h5><span style="color: #000000;">- Race bibs are provided on race day</span></h5>\n			<h5><span style="color: #843fa1;"><strong><u>When will I get my Swag?</u></strong></span></h5>\n			<h5><span style="color: #000000;">You will get your shirt at your mailing address the week of your race.</span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Race Updates: </strong></u></span></h5>\n			<h5><span style="color: #000000;">We will email you a final update the Wednesday before the race with final details and course maps.</span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Do you accept last minute registrations?</strong> (For those signing up 2 weeks before the race)</u></span></h5>\n			<h5><span style="color: #000000;">Yes, but please note that it takes time for us to ship your shirt. Your shirt will likely arrive after the run. You can wear any shirt you find appropriate to run the race!&nbsp;</span></h5>\n			<h5>&nbsp;<br><span style="color: #843fa1;"><u><strong>Wave Times: (Email Us Your Desired Wave Time: <a style="color: #843fa1;" href="mailto:info@thebestraces.com" target="_blank" rel="nofollow noopener noreferrer">info@thebestraces.com</a>)</strong></u></span><br><span style="color: #000000;">(Waves filled on a First Come, First Serve Basis)</span><br><span style="color: #000000;">Wave A: 7:30AM</span><br><span style="color: #000000;">Wave B: 8:00AM</span><br><span style="color: #000000;">Wave C: 8:30AM</span></h5>\n			<h5><span style="color: #000000;">Late runners can run upon arrival (Please note our coordinators stay 3 hours after the first wave)</span></h5>\n			<h5><span style="color: #000000;"><span style="text-decoration: underline;"><span style="color: rgb( 132 , 63 , 161 ); text-decoration: underline;"><strong>Are there any other Questions we missed?</strong></span></span><br><span style="text-decoration: underline;"><a href="https://www.thebestraces.com/faq/" target="_blank" rel="nofollow noopener noreferrer"><span style="color: rgb(132, 63, 161); text-decoration: underline;">https://www.thebestraces.com/faq/</span></a></span></span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Virtual Run Option:</strong></u></span><br><span style="color: #000000;">- Our Virtual Run uniquely offers a Training Pack with Digital Tools to support your run.&nbsp;</span></h5>\n			<h5><span style="color: #000000;">Virtual runs can be done any time and place of your choosing using any tracking device (optional). After you finish, you can submit your results to info@thebestraces.com to receive your medal!&nbsp;</span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Race Bundle:</strong></u></span></h5>\n			<h5><span style="color: #000000;">Sign-up for more races and get a discount!&nbsp;</span></h5>\n			<h4><span style="color: #843fa1;"><u><strong>Sponsorships &amp; Promoting your Business:</strong></u></span></h4>\n			<h5><strong>If you\'re looking to become a sponsor, we\'d love showcase your business!</strong><br><span style="color: #3598db;"><strong><u><a style="color: #3598db;" href="https://www.thebestraces.com/events" target="_blank" rel="nofollow noopener noreferrer">https://www.thebestraces.com/events</a></u></strong></span></h5>\n			<h5>&nbsp;</h5>\n			<h4><span style="color: #843fa1;"><strong><u>Team Glo Volunteers:</u></strong></span></h4>\n			<h5><span style="color: #843fa1;">If you\'re interested in helping put on runs for the Community and helping people achieve their goals, we invite you to join our team of volunteers, fill out the form here: </span><strong><span style="color: #3598db;"><a style="color: #3598db;" href="https://www.thebestraces.com/volunteer-form/" target="_blank" rel="nofollow noopener noreferrer"><u>https://www.thebestraces.com/volunteer-form/</u></a> </span></strong></h5>\n			<h5>&nbsp;</h5>\n			<h4><span style="text-decoration: underline;"><span style="color: rgb( 132 , 63 , 161 ); text-decoration: underline;"><strong>Be part of the Journey!</strong></span></span></h4>\n			<h5>Our Charity Initiatives. Find out more @ <a href="https://www.thebestracesjourney.com" target="_blank" rel="nofollow noopener noreferrer"><span style="color: rgb( 132 , 63 , 161 );">www.thebestracesjourney.com</span></a><br>Keep running. Every mile you log after the race, we\'ll donate $1 to one of the charities we work with! (Note that Fundraising is Optional)</h5>\n			</div>', 'Newport Beach, California', '1 Mi, 10 Km, 13.1 Km, 5 Km', 'https://s3-us-west-2.amazonaws.com/images.raceentry.com/logo/washington-city-half-marathon-registration-logo-2182.png?v=1737772095', NULL, '2025-01-24 04:36:12', '2025-01-24 04:38:18', 1),
+	(24, 'MT TOP SUMMER MARATHON example 4', 'MT TOP SUMMER MARATHON', 'THIS IS THE FIRST MARATHON OF ITS KIND IN QUTHING DISTRICT, WE NOT ONLY RACE BUT WE CELEBRATE 200 YEARS OF BASOTHO NATION', 'MOUNT MOOROSI, QUTHING, LSO', '5 Km	', 'https://s3-us-west-2.amazonaws.com/images.raceentry.com/top-banner/mt-top-summer-marathon-top-banner-82196.jpg?v=1737772926', '2025-01-24', '2025-01-24 04:36:12', '2025-01-24 04:38:17', 1),
+	(25, 'MOUNT MOOROSI RACE lorem 4', 'MOUNT MOOROSI RACE', 'THIS IS THE FIRST MARATHON OF ITS KIND IN QUTHING DISTRICT, WE NOT ONLY RACE BUT WE CELEBRATE 200 YEARS OF BASOTHO NATION', 'MOUNT MOOROSI, QUTHING, LSO', '10 Km	', 'https://s3-us-west-2.amazonaws.com/images.raceentry.com/top_banner/mount-moorosi-race-top_banner-82197.jpg?v=1737773046', '2025-03-24', '2025-01-24 04:36:12', NULL, 1),
+	(26, 'Hincestienduro 5', 'Hincestienduro', '<ul class="center-list position-relative">\n			\n							<h4>Hincestienduro Where &amp; When</h4>\n							<li>\n								<strong>Location:</strong>\n								<small>\n										<span>chisinau</span>,\n										<span>  2024</span>\n								</small>\n							</li>\n								<li><strong>Race Date:</strong> <small><span>2025/01/24 07:00:00 PM (Friday)</span></small></li>\n								<li>\n									<strong>Categories:</strong> <small><ul>\n				<li>Hobby</li>\n				<li>Newby</li>\n				<li>Expert</li>\n			</ul>\n			</small>\n								</li>\n						</ul>', 'chisinau, 2024, MDA	', '10 Km, 20 Km', 'https://s3-us-west-2.amazonaws.com/images.raceentry.com/logo/sd-trail-championships-registration-logo-53188.jpg?v=1737772095', '2025-01-24', '2025-01-24 04:36:12', '2025-01-24 04:38:16', 1),
+	(27, '2025 The Cookie Dash Hybrid Race LOS ANGELES 1', '2025 The Cookie Dash Hybrid Race LOS ANGELES', '<div id="raceFullDesc">\n			<h5><strong>Get Ready for the Cookie Dash! ðŸÂªâœ¨The race is on—join us for the Cookie Dash! It\'s not just a race, it\'s an adventure filled with delicious cookies for those who run with a sweet reward in mind!</strong></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Overview:</strong></u></span><br><span style="color: #34495e;">Run will sell-out QUICK! We will close off waves the moment they fill up. If waves are sold out, you can sign-up for the virtual run option or wait list.</span></h5>\n			<h5><span style="color: #34495e;">This is a smaller, private group run with a cap per wave.</span></h5>\n			<h5><span style="color: #34495e;">All paces and ages (under 18 with guardian) are welcome - Run or Walk! </span><span style="color: #34495e;">&nbsp;</span></h5>\n			<h5><span style="color: #000000;"><u>There\'s no equipment or setup, this is a pure run with our coordinators to support you in a warm, stress-free setting!</u></span></h5>\n			<h5><span style="color: #000000;">When you sign-up, we give you the support you need to help you achieve your goals and fitness. We also invite you to be part of our local run clubs that supports your fitness journey.&nbsp;<br></span></h5>\n			<h5><span style="color: #843fa1;"><strong><u>Timing:</u></strong></span></h5>\n			<h5><span style="color: #000000;">- Timing is Optional: You may track your time on an app (Strava, RunKeeper, Nike Run, etc) and submit your times with our easy form to be posted online. Or you can ask our coordinators to help keep track of your time.&nbsp;</span></h5>\n			<h5><span style="color: #000000;">- No timing chips (</span><span style="color: #000000;">This is a stress free run to support you in achieving your goals)!</span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>What You Get (Swag Bag)</strong></u></span><span style="color: #843fa1;"><u><strong>:</strong></u></span></h5>\n			<h5><span style="color: #000000;">-<strong> Running T-Shirt</strong> (Shipped to the address you register with - US only)</span></h5>\n			<h5><strong><span style="color: #000000;">- Finisher\'s Towel or Giveaway</span></strong></h5>\n			<h5><span style="color: #000000;"><strong>- Finisher\'s Medal!&nbsp;</strong></span></h5>\n			<h5><strong><span style="color: #000000;">- Digital Training Pack&nbsp;</span></strong></h5>\n			<h5><span style="color: #000000;">-&nbsp;<span style="color: rgb( 86 , 66 , 219 );"><a style="color: rgb( 86 , 66 , 219 );" href="https://www.thebestraces.com/results/" target="_blank" rel="nofollow noopener noreferrer"><strong>Online Results &amp; Certificate of Completion</strong></a></span></span></h5>\n			<h5><span style="color: #000000;"><span style="color: rgb( 86 , 66 , 219 );"><strong>- <span style="color: rgb( 132 , 63 , 161 );"><a style="color: rgb( 132 , 63 , 161 );" href="https://www.thebestraces.com/run-or-walk-club/" target="_blank" rel="nofollow noopener noreferrer"><span style="text-decoration: underline;">Invitation to Join one of our Local Running Clubs</span></a></span></strong></span></span></h5>\n			<h5><span style="color: #000000;">-&nbsp;<strong>We now have Technical Running Shirts (Optional).</strong> These lightweight, moisture wicking shirts can be <u>upgraded for just $5 more</u>.&nbsp;</span></h5>\n			<h5><span style="color: #843fa1;"><strong><u>Packet Pickup:</u></strong></span></h5>\n			<h5><span style="color: #000000;">No hassle of picking up packets required!</span></h5>\n			<h5><span style="color: #000000;">-Swag shipped direct to your address (Please make sure you provide your full, correct US mailing address including apartment number and check spelling)</span></h5>\n			<h5><span style="color: #000000;">- Race bibs are provided on race day</span></h5>\n			<h5><span style="color: #843fa1;"><strong><u>When will I get my Swag?</u></strong></span></h5>\n			<h5><span style="color: #000000;">You will get your shirt at your mailing address the week of your race.</span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Race Updates: </strong></u></span></h5>\n			<h5><span style="color: #000000;">We will email you a final update the Wednesday before the race with final details and course maps.</span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Do you accept last minute registrations?</strong> (For those signing up 2 weeks before the race)</u></span></h5>\n			<h5><span style="color: #000000;">Yes, but please note that it takes time for us to ship your shirt. Your shirt will likely arrive after the run. You can wear any shirt you find appropriate to run the race!&nbsp;</span></h5>\n			<h5>&nbsp;<br><span style="color: #843fa1;"><u><strong>Wave Times: (Email Us Your Desired Wave Time: <a style="color: #843fa1;" href="mailto:info@thebestraces.com" target="_blank" rel="nofollow noopener noreferrer">info@thebestraces.com</a>)</strong></u></span><br><span style="color: #000000;">(Waves filled on a First Come, First Serve Basis)</span><br><span style="color: #000000;">Wave A: 7:30AM</span><br><span style="color: #000000;">Wave B: 8:00AM</span><br><span style="color: #000000;">Wave C: 8:30AM</span></h5>\n			<h5><span style="color: #000000;">Late runners can run upon arrival (Please note our coordinators stay 3 hours after the first wave)</span></h5>\n			<h5><span style="color: #000000;"><span style="text-decoration: underline;"><span style="color: rgb( 132 , 63 , 161 ); text-decoration: underline;"><strong>Are there any other Questions we missed?</strong></span></span><br><span style="text-decoration: underline;"><a href="https://www.thebestraces.com/faq/" target="_blank" rel="nofollow noopener noreferrer"><span style="color: rgb(132, 63, 161); text-decoration: underline;">https://www.thebestraces.com/faq/</span></a></span></span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Virtual Run Option:</strong></u></span><br><span style="color: #000000;">- Our Virtual Run uniquely offers a Training Pack with Digital Tools to support your run.&nbsp;</span></h5>\n			<h5><span style="color: #000000;">Virtual runs can be done any time and place of your choosing using any tracking device (optional). After you finish, you can submit your results to info@thebestraces.com to receive your medal!&nbsp;</span></h5>\n			<h5><span style="color: #843fa1;"><u><strong>Race Bundle:</strong></u></span></h5>\n			<h5><span style="color: #000000;">Sign-up for more races and get a discount!&nbsp;</span></h5>\n			<h4><span style="color: #843fa1;"><u><strong>Sponsorships &amp; Promoting your Business:</strong></u></span></h4>\n			<h5><strong>If you\'re looking to become a sponsor, we\'d love showcase your business!</strong><br><span style="color: #3598db;"><strong><u><a style="color: #3598db;" href="https://www.thebestraces.com/events" target="_blank" rel="nofollow noopener noreferrer">https://www.thebestraces.com/events</a></u></strong></span></h5>\n			<h5>&nbsp;</h5>\n			<h4><span style="color: #843fa1;"><strong><u>Team Glo Volunteers:</u></strong></span></h4>\n			<h5><span style="color: #843fa1;">If you\'re interested in helping put on runs for the Community and helping people achieve their goals, we invite you to join our team of volunteers, fill out the form here: </span><strong><span style="color: #3598db;"><a style="color: #3598db;" href="https://www.thebestraces.com/volunteer-form/" target="_blank" rel="nofollow noopener noreferrer"><u>https://www.thebestraces.com/volunteer-form/</u></a> </span></strong></h5>\n			<h5>&nbsp;</h5>\n			<h4><span style="text-decoration: underline;"><span style="color: rgb( 132 , 63 , 161 ); text-decoration: underline;"><strong>Be part of the Journey!</strong></span></span></h4>\n			<h5>Our Charity Initiatives. Find out more @ <a href="https://www.thebestracesjourney.com" target="_blank" rel="nofollow noopener noreferrer"><span style="color: rgb( 132 , 63 , 161 );">www.thebestracesjourney.com</span></a><br>Keep running. Every mile you log after the race, we\'ll donate $1 to one of the charities we work with! (Note that Fundraising is Optional)</h5>\n			</div>', 'Newport Beach, California', '1 Mi, 10 Km, 13.1 Km, 5 Km', 'https://s3-us-west-2.amazonaws.com/images.raceentry.com/logo/washington-city-half-marathon-registration-logo-2182.png?v=1737772095', NULL, '2025-01-24 04:36:12', '2025-01-24 04:38:18', 1);
+/*!40000 ALTER TABLE `races` ENABLE KEYS */;
+
 -- Dumping structure for table master.roles
-DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `id` int(11) unsigned NOT NULL,
   `name` varchar(32) NOT NULL,
@@ -156,7 +141,6 @@ INSERT INTO `roles` (`id`, `name`, `description`) VALUES
 /*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 
 -- Dumping structure for table master.roles_users
-DROP TABLE IF EXISTS `roles_users`;
 CREATE TABLE IF NOT EXISTS `roles_users` (
   `user_id` int(10) unsigned NOT NULL,
   `role_id` int(10) unsigned NOT NULL
@@ -170,7 +154,6 @@ INSERT INTO `roles_users` (`user_id`, `role_id`) VALUES
 /*!40000 ALTER TABLE `roles_users` ENABLE KEYS */;
 
 -- Dumping structure for table master.rules
-DROP TABLE IF EXISTS `rules`;
 CREATE TABLE IF NOT EXISTS `rules` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `type` varchar(255) NOT NULL,
@@ -190,7 +173,6 @@ INSERT INTO `rules` (`id`, `type`, `key`, `rule`) VALUES
 /*!40000 ALTER TABLE `rules` ENABLE KEYS */;
 
 -- Dumping structure for table master.sessions
-DROP TABLE IF EXISTS `sessions`;
 CREATE TABLE IF NOT EXISTS `sessions` (
   `session_id` varchar(24) NOT NULL,
   `last_active` int(10) unsigned NOT NULL,
@@ -204,7 +186,6 @@ CREATE TABLE IF NOT EXISTS `sessions` (
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 
 -- Dumping structure for table master.users
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
@@ -225,7 +206,6 @@ INSERT INTO `users` (`id`, `email`, `first_name`, `last_name`, `password`, `salt
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 -- Dumping structure for table master.users_user_roles
-DROP TABLE IF EXISTS `users_user_roles`;
 CREATE TABLE IF NOT EXISTS `users_user_roles` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) unsigned NOT NULL,
@@ -245,7 +225,6 @@ INSERT INTO `users_user_roles` (`id`, `user_id`, `user_role_id`) VALUES
 /*!40000 ALTER TABLE `users_user_roles` ENABLE KEYS */;
 
 -- Dumping structure for table master.user_config
-DROP TABLE IF EXISTS `user_config`;
 CREATE TABLE IF NOT EXISTS `user_config` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) unsigned NOT NULL,
@@ -262,7 +241,6 @@ CREATE TABLE IF NOT EXISTS `user_config` (
 /*!40000 ALTER TABLE `user_config` ENABLE KEYS */;
 
 -- Dumping structure for table master.user_logins
-DROP TABLE IF EXISTS `user_logins`;
 CREATE TABLE IF NOT EXISTS `user_logins` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `ip` varchar(65) NOT NULL,
@@ -292,7 +270,6 @@ INSERT INTO `user_logins` (`id`, `ip`, `agent`, `login`, `created`, `user_id`) V
 /*!40000 ALTER TABLE `user_logins` ENABLE KEYS */;
 
 -- Dumping structure for table master.user_roles
-DROP TABLE IF EXISTS `user_roles`;
 CREATE TABLE IF NOT EXISTS `user_roles` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(32) DEFAULT NULL,
@@ -308,7 +285,6 @@ INSERT INTO `user_roles` (`id`, `name`) VALUES
 /*!40000 ALTER TABLE `user_roles` ENABLE KEYS */;
 
 -- Dumping structure for table master.user_tokens
-DROP TABLE IF EXISTS `user_tokens`;
 CREATE TABLE IF NOT EXISTS `user_tokens` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `token` varchar(40) NOT NULL,
