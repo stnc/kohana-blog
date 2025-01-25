@@ -7,9 +7,9 @@ class Controller_Index extends Controller
     {
 
 
-        $count = DB::select(DB::expr('COUNT(*) AS mycount'))->from('articles')->execute()->get('mycount');
+        $count = DB::select(DB::expr('COUNT(*) AS mycount'))->from('races')->execute()->get('mycount');
 
-        $perpage = 2;
+        $perpage = 10;
 
 
         //you can configure routes and custom routes params
@@ -25,23 +25,19 @@ class Controller_Index extends Controller
             );
 
 
-        $data = DB::select(SUBSTR('content', 0, 40), 'title', 'small_title', 'articles.id', 'articles.updated_at', 'name')
-            ->from('articles')
+        $data = DB::select(SUBSTR('content', 0, 40), 'title',  'races.id', 'races.updated_at', 'location','logo','distances')
+            ->from('races')
             ->join('users')
-            ->on('users.id', '=', 'articles.user_id')
-            ->order_by("articles.id", "DESC")
+            ->on('users.id', '=', 'races.user_id')
+            ->order_by("races.id", "DESC")
             ->limit($pagination->items_per_page)
             ->offset($pagination->offset)
-            ->group_by("articles.id")
+            ->group_by("races.id")
             ->execute()->as_array();
 
+            // print_r($data);
         $title = 'Hello world!';
-        // Template::factory('Index/index', array(
-        //         'title' => $title,
-        //         'data' =>$data,
-        //         'pagination'=>$pagination,
-        //     )
-        // )->response();
+
 
         $view = new View_Home_Index;
         $view->set('title',  $title)
@@ -55,15 +51,15 @@ class Controller_Index extends Controller
     }
     public function action_total()
     {
-        $total = Model::factory('articles')->getTotal();
-        echo '库里面有' . $total[0]['total'] . '条数据';
+        $total = Model::factory('races')->getTotal();
+        echo 'There are ' . $total[0]['total'] . ' data in total';
     }
 
     public function action_detail()
     {
 
         if (!empty($_GET['id'])) {
-            $data = Model::factory('articles')->getOne($_GET['id']);
+            $data = Model::factory('races')->getOne($_GET['id']);
 
             $title = 'Hello world!!!';
             Template::factory(
@@ -75,7 +71,7 @@ class Controller_Index extends Controller
             )->response();
         } else {
             $title = 'Hello world!!!';
-            $data = array('code' => 'error001', 'msg' => '参数传递错误');
+            $data = array('code' => 'error001', 'msg' => 'There is a problem');
             Template::factory(
                 'Index/index',
                 array(

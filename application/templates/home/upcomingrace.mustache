@@ -1,0 +1,68 @@
+	<section class="section custom-bg-color-grey-1 border-0 m-0" id="courses">
+				<div class="container position-relative my-4">
+
+					<div class="bg-grey-100 px-3 px-xl-0 border-radius-2 p-relative overflow-hidden custom-pos-3">
+						<div class="container py-5">
+							<div class="row pt-4">
+								<div class="col text-center">
+									<div class="appear-animation animated fadeIn appear-animation-visible" data-appear-animation="fadeIn" data-appear-animation-delay="200" style="animation-delay: 200ms;">
+										<h2 class="text-9 text-lg-12 font-weight-semibold line-height-1 mb-4">Upcoming Races</h2>
+									</div>
+								</div>
+							</div>
+							<div class="row pb-5">
+							  {{# data }}
+								<div class="col-lg-4 mb-4 mb-lg-0" style=" margin-top:20px">
+									<article class="post" >
+										<div class="">
+											<div class="p-relative rounded-3 overflow-hidden" >
+												<div class="post-date p-absolute top-20 left-20">
+													<span class="day py-1 text-4 font-weight-bold text-secondary">18</span>
+													<span class="month bg-secondary">Jan</span>
+												</div>
+
+												<a href="index/detail?id={{id}}" class="text-decoration-none">
+													<img class="card-img-top" witdh="348" height="348" src="{{logo}}" loading="lazy" alt="Card Image">
+												</a>
+												<div class="card-body bg-light p-4" style=" min-width: 358px;min-height: 204px;height: 205px;">
+													<div class="card-body2">
+
+														<h4 class="mb-2 text-color-secondary"><a href="demo-education-courses-details.html" class="text-color-secondary" title=""> {{title}}</a></h4>
+														<p class="mb-0 text-2 p-relative top-5 text-uppercase"><i class="far text-primary fa-solid fa-location-dot"></i> {{location}}</p>
+														<div class="float-end">
+															<button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn   btn-primary btn-modern rounded-0 py-2 px-4"><i class="fa-solid fa-cart-shopping"></i> Register</button>
+														</div>
+
+														<div class="text-2-5">
+															<span class="d-inline-block pe-2"><i class="far text-primary  fa-solid fa-calendar-days"></i> JAN 18 2025 </span>
+															<span class="d-inline-block pe-2"><i class="far text-primary fa-solid fa-person-walking-arrow-right"></i> {{distances}}</span>
+														</div>
+													</div>
+
+												</div>
+											</div>
+										</div>
+
+
+
+
+
+									</article>
+								</div>
+     						{{/ data }}
+
+
+
+							</div>
+
+
+
+
+
+
+						</div>
+					</div>
+			</section>
+		      
+
+        {{{pagination}}}

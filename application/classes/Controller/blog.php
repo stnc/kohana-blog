@@ -1,12 +1,12 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 
-class Controller_About extends Controller {
+class Controller_Blog extends Controller {
 
     public function action_index()
     {
 
-        $title = 'Hello world!!!';
-        $view = new View_About_Index;
+        $title = 'Blog';
+        $view = new View_Blog_Index;
         $view->set('title',  $title);
 
         $this->response->body($view);

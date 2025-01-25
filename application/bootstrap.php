@@ -22,7 +22,7 @@ else
  * @link http://kohanaframework.org/guide/using.configuration
  * @link http://www.php.net/manual/timezones
  */
-date_default_timezone_set('America/Chicago');
+date_default_timezone_set('America/Denver');
 
 /**
  * Set the default locale.
@@ -141,19 +141,9 @@ Cookie::$salt = '123456';
  */
 
 
-/**
- * 后台路由
- */
-Route::set('admin', 'admin/<controller>(/<action>(/<id>))')
-    ->defaults(array(
-        'directory' => 'admin',
-        'controller' => 'index',
-        'action' => 'index',
-    ));
 
-/**
- * 默认路由
- */
+
+
 Route::set('default', '(<controller>(/<action>(/<id>)))')
     ->defaults(array(
         'controller' => 'Index',
