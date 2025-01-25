@@ -1,6 +1,6 @@
 <?php
 
-class View_Blog_Index extends Kostache_Layout
+class View_Home_Detail extends Kostache_Layout
 {
     /**
      * @var     array    partials for the page
@@ -12,6 +12,6 @@ class View_Blog_Index extends Kostache_Layout
         'crumb' => 'crumb',
       
     ];
-    public $title= false;
+
 
 }

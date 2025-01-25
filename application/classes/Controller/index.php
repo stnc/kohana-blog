@@ -36,7 +36,7 @@ class Controller_Index extends Controller
             ->execute()->as_array();
 
             // print_r($data);
-        $title = 'Hello world!';
+        $title = 'Online Race Registration Software - Free Race Maps &amp; Marathon Reviews';
 
 
         $view = new View_Home_Index;
@@ -61,24 +61,23 @@ class Controller_Index extends Controller
         if (!empty($_GET['id'])) {
             $data = Model::factory('races')->getOne($_GET['id']);
 
-            $title = 'Hello world!!!';
-            Template::factory(
-                'Index/detail',
-                array(
-                    'data' => $data,
-                    'title' => $title,
-                )
-            )->response();
+            $title = 'Race Detail';
+
+            $view = new View_Home_Detail;
+            $view->set('title',  $title)
+                ->set('data', $data);
+    
+            $this->response->body($view);
+
+
         } else {
-            $title = 'Hello world!!!';
+            $title = 'Race Detail Error Page';
             $data = array('code' => 'error001', 'msg' => 'There is a problem');
-            Template::factory(
-                'Index/index',
-                array(
-                    'data' => $data,
-                    'title' => $title,
-                )
-            )->response();
+            $view = new View_Home_Index;
+            $view->set('title',  $title)
+                ->set('data', $data);
+    
+            $this->response->body($view);
         }
     }
 } // End Welcome

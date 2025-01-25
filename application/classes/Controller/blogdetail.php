@@ -6,7 +6,7 @@ class Controller_Blogdetail extends Controller {
     {
 
         $title = 'Blog';
-        $view = new View_BlogDetail_Index;
+        $view = new View_Blog_Detail;
         $view->set('title',  $title);
 
         $this->response->body($view);

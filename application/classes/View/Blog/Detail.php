@@ -1,6 +1,6 @@
 <?php
 
-class View_BlogDetail_Index extends Kostache_Layout
+class View_Blog_Detail extends Kostache_Layout
 {
     /**
      * @var     array    partials for the page
