@@ -1,4 +1,4 @@
-# Kohana Framework blog project
+# Kohana Framework Blog Project
 
 # System Requirements
 
