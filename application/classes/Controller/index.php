@@ -7,7 +7,7 @@ class Controller_Index extends Controller
     {
 
 
-        $count = DB::select(DB::expr('COUNT(*) AS mycount'))->from('races')->execute()->get('mycount');
+        $count = DB::select(DB::expr('COUNT(*) AS count_'))->from('races')->execute()->get('count_');
 
         $perpage = 10;
 
@@ -49,6 +49,9 @@ class Controller_Index extends Controller
 
         
     }
+
+
+
     public function action_total()
     {
         $total = Model::factory('races')->getTotal();
