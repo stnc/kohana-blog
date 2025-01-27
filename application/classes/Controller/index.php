@@ -2,15 +2,18 @@
 
 class Controller_Index extends Controller
 {
-
+    /**
+     * Controller used to manage index (homepage). The #[HOMEPAGE] attribute
+     * It can only be used in controllers 
+     *
+     * @author Selman TUNC
+     */
     public function action_index()
     {
-
 
         $count = DB::select(DB::expr('COUNT(*) AS count_'))->from('races')->execute()->get('count_');
 
         $perpage = 10;
-
 
         //you can configure routes and custom routes params
         $pagination = Pagination::factory(array(
@@ -25,7 +28,7 @@ class Controller_Index extends Controller
             );
 
 
-        $data = DB::select(SUBSTR('content', 0, 40), 'title',  'races.id', 'races.updated_at', 'location','logo','distances')
+        $data = DB::select(SUBSTR('content', 0, 40), 'title',  'races.id', 'races.updated_at', 'location', 'logo', 'distances')
             ->from('races')
             ->join('users')
             ->on('users.id', '=', 'races.user_id')
@@ -35,7 +38,7 @@ class Controller_Index extends Controller
             ->group_by("races.id")
             ->execute()->as_array();
 
-            // print_r($data);
+        // print_r($data);
         $title = 'Online Race Registration Software - Free Race Maps &amp; Marathon Reviews';
 
 
@@ -45,9 +48,6 @@ class Controller_Index extends Controller
             ->set('data', $data);
 
         $this->response->body($view);
-
-
-        
     }
 
 
@@ -69,17 +69,15 @@ class Controller_Index extends Controller
             $view = new View_Home_Detail;
             $view->set('title',  $title)
                 ->set('data', $data);
-    
+
             $this->response->body($view);
-
-
         } else {
             $title = 'Race Detail Error Page';
             $data = array('code' => 'error001', 'msg' => 'There is a problem');
             $view = new View_Home_Index;
             $view->set('title',  $title)
                 ->set('data', $data);
-    
+
             $this->response->body($view);
         }
     }
