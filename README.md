@@ -12,7 +12,7 @@ Kohana version  3.3.6 https://github.com/koseven/koseven/archive/refs/tags/3.3.6
  laragon for windows (Wamp Stack) https://github.com/leokhoa/laragon/releases/tag/3.1.9
 
 
-## for mac 
+## for mac stack 
 
  https://laravel.com/docs/11.x/valet
 
