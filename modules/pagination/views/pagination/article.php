@@ -1,15 +1,15 @@
 <div class="page">
 
 	<?php if ($first_page !== FALSE): ?>
-		<a href="<?php echo HTML::chars($page->url($first_page)) ?>" rel="first">首页</a>
+		<a href="<?php echo HTML::chars($page->url($first_page)) ?>" rel="first">First</a>
 	<?php else: ?>
-	  首页
+	  First Page
 	<?php endif ?>
 
 	<?php if ($previous_page !== FALSE): ?>
-		<a href="<?php echo HTML::chars($page->url($previous_page)) ?>" rel="prev">上一页</a>
+		<a href="<?php echo HTML::chars($page->url($previous_page)) ?>" rel="prev">Prev</a>
 	<?php else: ?>
-		上一页
+		Last Page
 	<?php endif ?>
 
 	<?php for ($i = 1; $i <= $total_pages; $i++): ?>
@@ -23,15 +23,15 @@
 	<?php endfor ?>
 
 	<?php if ($next_page !== FALSE): ?>
-		<a href="<?php echo HTML::chars($page->url($next_page)) ?>" rel="next">下一页</a>
+		<a href="<?php echo HTML::chars($page->url($next_page)) ?>" rel="next">Next Page</a>
 	<?php else: ?>
-		下一页
+		Next Page
 	<?php endif ?>
 
 	<?php if ($last_page !== FALSE): ?>
-		<a href="<?php echo HTML::chars($page->url($last_page)) ?>" rel="last">末页</a>
+		<a href="<?php echo HTML::chars($page->url($last_page)) ?>" rel="last">Last Page</a>
 	<?php else: ?>
-		末页
+		Last Page
 	<?php endif ?>
 
 </div><!-- .pagination -->
